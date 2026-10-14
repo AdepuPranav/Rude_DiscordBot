@@ -34,7 +34,7 @@ namespace ChatBotDiscord
             _serviceProvider = services;
 
             string discordToken = _configuration["DiscordToken"] ?? throw new Exception("Missing Discord Token");
-            _logger.LogInformation($"Starting up with token {discordToken}");
+            _logger.LogInformation($"Starting up");
 
             // The CommandService uses the provided ServiceProvider to inject dependencies into command modules
             await _commands.AddModulesAsync(Assembly.GetExecutingAssembly(), _serviceProvider);
